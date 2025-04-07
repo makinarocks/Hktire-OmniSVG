@@ -18,7 +18,7 @@
 
 ## To Do List
 - [ ] Release Code and pretrained models
-- [ ] MMSVG-2M-Icon Illustration and Character Release
+- [ ] MMSVG-2M-[Illustration, Character] Release
 - [x] MMSVG-2M-Icon Dataset Release
 - [x] Project Page & Technical Report
 
