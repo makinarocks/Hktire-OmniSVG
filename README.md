@@ -6,8 +6,8 @@
 
 <a href='https://arxiv.org/abs/xxxx.xxxxx'><img src='https://img.shields.io/badge/arXiv-xxxx.xxxxx-b31b1b.svg'></a> &nbsp;&nbsp;&nbsp;&nbsp;
  <a href='https://omnisvg.github.io/'><img src='https://img.shields.io/badge/Project-Page-Green'></a> &nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://huggingface.co/"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Weights-HF-orange"></a> &nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://huggingface.co/spaces/Yiwen-ntu/MeshAnythingV2"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset%20-HF-orange"></a>
+<a href="https://huggingface.co/OmniSVG"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Weights-HF-orange"></a> &nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://huggingface.co/OmniSVG"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset%20-HF-orange"></a>
 
 </div>
 
@@ -17,9 +17,9 @@
 
 
 ## To Do List
-- [ ] Release Code and pretrained models
-- [ ] MMSVG-2M-[Illustration, Character] Release
-- [x] MMSVG-2M-Icon Dataset Release
+- [ ] Code and Pretrained Models Release
+- [ ] MMSVG-Character Release
+- [x] MMSVG-Icon and MMSVG-Illustration Dataset Release
 - [x] Project Page & Technical Report
 
 ## Citation
