@@ -1,5 +1,5 @@
 <div align= "center">
-    <h1> Official repo for MeshXL</h1>
+    <h1> Official repo for OmniSVG</h1>
 
 </div>
 
