@@ -16,9 +16,20 @@
 
 </div>
 
+## 🏃 Intro OmniSVG
+
+**OmniSVG** is the first family of end-to-end multimodal SVG generators that leverage pre-trained Vision-Language Models (VLMs), capable of generating complex and detailed SVGs, from simple icons to intricate anime characters.
+
+
 <p align="center">
     <img src="assets/omnisvg-teaser.gif" alt="Demo GIF" width="512px" />
 </p>
+
+## 🚩 News
+
+- [2024/04/09] Release MMSVG-Icon and MMSVG-Illustration Dataset 🤗[weights](https://huggingface.co/OmniSVG).
+- [2025/04/09] Upload paper and init project.
+
 
 
 ## To Do List
@@ -37,3 +48,15 @@
   year={2025}
 }
 ```
+
+
+## Acknowledgments
+We thank the following excellent open-source works:
+
+[IconShop](https://icon-shop.github.io/): is the first advanced work that leverages LLMs to generate monochrome, icon-level SVGs. We referred to its parametric implementation.
+
+Here is the list of highly related concurrent works:
+
+[LLM4SVG](https://arxiv.org/abs/2412.11102): treats SVG corodinates as number strings and predicts decimal part for higher spatial accuracy.
+[StarVector](https://starvector.github.io/): equips LLM with a image encoder for Image-to-SVG generation.
+
