@@ -1,3 +1,8 @@
+<div align= "center">
+    <h1> Official repo for MeshXL</h1>
+
+</div>
+
 <p align="center">
   <h3 align="center"><strong>OmniSVG: A Unified Scalable Vector Graphics Generation Model</strong></h3>
 
