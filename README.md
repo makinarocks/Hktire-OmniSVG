@@ -30,7 +30,7 @@
 
 ## 🚩 News
 
-- [2024/04/09] Release MMSVG-Icon and MMSVG-Illustration Dataset 🤗[weights](https://huggingface.co/OmniSVG).
+- [2024/04/09] Release MMSVG-Icon and MMSVG-Illustration 🤗[Dataset](https://huggingface.co/OmniSVG).
 - [2025/04/09] Upload paper and init project.
 
 
