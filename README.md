@@ -62,5 +62,5 @@ Here is the list of highly related concurrent works:
 
 [LLM4SVG](https://arxiv.org/abs/2412.11102): treats SVG corodinates as number strings and predicts decimal part for higher spatial accuracy.
 
-[StarVector](https://starvector.github.io/): equips LLM with a image encoder for Image-to-SVG generation.
+[StarVector](https://starvector.github.io/): equips LLM with an image encoder for Image-to-SVG generation.
 
