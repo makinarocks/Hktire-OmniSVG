@@ -52,6 +52,7 @@
 }
 ```
 
+[![Star History Chart](https://api.star-history.com/svg?repos=bytebase/star-history&type=Date)](https://www.star-history.com/#OmniSVG/OmniSVG&Date)
 
 ## Acknowledgments
 We thank the following excellent open-source works:
@@ -63,4 +64,5 @@ Here is the list of highly related concurrent works:
 [LLM4SVG](https://arxiv.org/abs/2412.11102): treats SVG coordinates as number strings and predicts decimal part for higher spatial accuracy.
 
 [StarVector](https://starvector.github.io/): equips LLM with an image encoder for Image-to-SVG generation.
+
 
