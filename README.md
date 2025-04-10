@@ -22,7 +22,7 @@
 
 
 <p align="center">
-    <img src="assets/omnisvg-teaser.gif" alt="Demo GIF" width="512px" />
+    <img src="assets/OmniSVG-demo-gen-proc-anime-1080.gif" alt="Demo GIF" width="512px" />
 </p>
 <p align="center">
     <img src="assets/OmniSVG-demo-gen-proc-anime-1080.gif" alt="Demo GIF" width="512px" />
