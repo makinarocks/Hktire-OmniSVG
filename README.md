@@ -23,7 +23,7 @@
 
 
 ## To Do List
-- [ ] Code and Pretrained Models Release
+- [ ] Code and Pretrained Models Release 
 - [ ] MMSVG-Character Dataset Release
 - [x] MMSVG-Icon and MMSVG-Illustration Dataset Release
 - [x] Project Page & Technical Report
