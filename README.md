@@ -113,7 +113,7 @@ pip install -r requirements.txt
 
 1. **Download Model Weights**
    
-   Download the model weights from [Hugging Face](https://huggingface.co/OmniSVG) and place them in the `./pretrained_models/OmniSVG-3B` directory.
+   Download the model weights from [Hugging Face](https://huggingface.co/OmniSVG) and config.yaml and place them in the `/PATH/TO/OmniSVG-3B` and `/PATH/TO/config.yaml` directory.
 
 2. **Run Inference**
    
