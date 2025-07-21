@@ -117,15 +117,15 @@ pip install -r requirements.txt
 
 2. **Run Inference**
    
-   Execute the following command to run inference on your images:
+   Execute the following command to run inference:
    ```bash
    #image-to-svg
-   python inference.py --input_dir ./examples.txt --output_dir ./output --task_type image-to-svg --weight_path /PATH/TO/OmniSVG-3B
+   python inference.py --input_dir ./examples --output_dir ./output --task_type image-to-svg --weight_path /PATH/TO/OmniSVG-3B
    ```
 
    ```
    #text-to-svg
-   python inference.py --input_dir ./examples --output_dir ./output --task_type text-to-svg --weight_path /PATH/TO/OmniSVG-3B
+   python inference.py --input_dir ./examples.txt --output_dir ./output --task_type text-to-svg --weight_path /PATH/TO/OmniSVG-3B
    ```
 
 ### Interactive Demo
