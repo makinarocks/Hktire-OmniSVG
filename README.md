@@ -112,12 +112,17 @@ pip install -r requirements.txt
 ### Quick Start
 
 1. **Download Model Weights**
-   
-   Download the model weights from [Hugging Face](https://huggingface.co/OmniSVG) and config.yaml and place them in the `/PATH/TO/OmniSVG-3B` and `/PATH/TO/config.yaml` directory.
-   ```
-   #Download file with huggingface-cli
-   pip install huggingface-cli
-   huggingface-cli download OmniSVG/OmniSVG
+### Prerequisites
+First, install the Hugging Face CLI tool:
+```bash
+pip install huggingface-hub
+```
+
+### Download Instructions
+  **Download the model from Hugging Face:**
+   ```bash
+   # Download to your directory
+   huggingface-cli download OmniSVG/OmniSVG --local-dir /PATH/TO/OmniSVG-3B
    ```
 
 3. **Run Inference**
