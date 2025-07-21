@@ -16,9 +16,7 @@
 ## 🔥🔥🔥 News !!
 
 - [2025/07/22] 👋 We have released the Huggingface Demo. 🤗[Demo](https://huggingface.co/spaces/OmniSVG/OmniSVG-3B).
-
 - [2025/07/22] 👋 We have released the inference code and model weight of MMSVG-Icon and MMSVG-Illustration dataset. 🤗[Weight](https://huggingface.co/OmniSVG/OmniSVG).
-
 - [2025/04/09] 👋 Release MMSVG-Icon and MMSVG-Illustration 🤗[Dataset](https://huggingface.co/OmniSVG).
 - [2025/04/09] 👋 Upload paper and init project. [Read](https://arxiv.org/abs/2504.06263)
 
@@ -27,6 +25,10 @@
     <img src="assets/OmniSVG-demo-gen-proc-anime-1080.gif" alt="Demo GIF" width="720px" />
 </p>
 
+## 🧩 Community Contributions
+If you are developing / using OmniSVG in your projects, or you want to contribute to OmniSVG, please let us know 🎉.
+
+- If you find data issues when using MMSVG dataset, please drop an issue in this [form](https://npqawhh9ht.feishu.cn/wiki/KHv2wDqAxiSV8skpkANcbmlwnqc?from=from_copylink).
 
 ## 📑 Open-source Plan
 - [x] Project Page & Technical Report
