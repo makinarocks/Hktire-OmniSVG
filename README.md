@@ -38,7 +38,7 @@ If you are developing / using OmniSVG in your projects, or you want to contribut
 - [x] Online Demo (Gradio deployed on Huggingface)
 - [ ] Model Weight of OmniSVG-7B Release
 - [ ] MMSVG-Character Dataset Release
-- [ ] Model Weight of MMSVG-Character Dataset 
+- [ ] Model Weight of MMSVG-Character Dataset Release
 
 
 
