@@ -162,8 +162,8 @@ def generate_svg(input_ids, attention_mask, pixel_values=None, image_grid_thw=No
             gen_config = dict(
                 do_sample=True,
                 temperature=0.8,
-                top_p=0.75,
-                top_k=20,
+                top_p=0.95,
+                top_k=50,
                 repetition_penalty=1.05,
                 early_stopping=True,
             )
@@ -174,12 +174,10 @@ def generate_svg(input_ids, attention_mask, pixel_values=None, image_grid_thw=No
 
         # Generate SVG
         model_config = config['model']
-        #max_length = model_config['max_length']
-        max_length = 1536
+        max_length = model_config['max_length']
         output_ids = torch.ones(1, max_length+1).long().to(device) * model_config['eos_token_id']
         
         with torch.no_grad():
-            start_time = time.time()
             results = sketch_decoder.transformer.generate(
                 input_ids=input_ids, 
                 attention_mask=attention_mask, 
@@ -193,12 +191,6 @@ def generate_svg(input_ids, attention_mask, pixel_values=None, image_grid_thw=No
                 use_cache=True,
                 **gen_config
             )
-            
-            # 记录结束时间并计算耗时
-            
-            end_time = time.time()
-            generation_time = end_time - start_time
-            print(f"Generation time: {generation_time:.2f} seconds")
             
             results = results[:, :max_length]
             
