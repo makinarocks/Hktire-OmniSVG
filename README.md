@@ -112,13 +112,10 @@ pip install -r requirements.txt
 ### Quick Start
 
 **Download Model Weights**
-#### Prerequisites
 First, install the Hugging Face CLI tool:
 ```bash
 pip install huggingface-hub
 ```
-
-#### Download Instructions
   **Download the model from Hugging Face:**
    ```bash
    # Download to your directory
