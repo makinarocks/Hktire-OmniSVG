@@ -53,7 +53,7 @@ def load_models():
 
         sketch_decoder = SketchDecoder()
         
-        sketch_weight_path = "/PATH/TO/OmniSVG-3B"
+        sketch_weight_path = "/PATH/TO/OmniSVG-3B/pytorch_model.bin"
         sketch_decoder.load_state_dict(torch.load(sketch_weight_path))
         sketch_decoder = sketch_decoder.to(device).eval()
         
