@@ -30,6 +30,7 @@
 If you are developing / using OmniSVG in your projects, or you want to contribute to OmniSVG, please let us know 🎉.
 
 - If you find data issues when using MMSVG dataset, please drop an issue in this [form](https://npqawhh9ht.feishu.cn/wiki/KHv2wDqAxiSV8skpkANcbmlwnqc?from=from_copylink).
+- 👋 OmniSVG ComfyUI Plugin by [@smthemex](https://github.com/smthemex) [ComfyUI_OmniSVG](https://github.com/smthemex/ComfyUI_OmniSVG).
 
 ## 📑 Open-source Plan
 - [x] Project Page & Technical Report
