@@ -127,3 +127,5 @@ config/secrets.yml
 uploads/
 public/uploads/
 storage/
+
+output/

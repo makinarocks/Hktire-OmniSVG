@@ -1,4 +1,5 @@
 import torch
+from typing import Optional, Tuple
 from torch.nn import Linear
 from torch.nn.init import xavier_uniform_
 from torch.nn.init import constant_
@@ -105,9 +106,9 @@ class MultiheadAttention(Module):
 
         super(MultiheadAttention, self).__setstate__(state)
 
-    def forward(self, query, key, value, key_padding_mask=None,
-                need_weights=True, attn_mask=None):
-        # type: (Tensor, Tensor, Tensor, Optional[Tensor], bool, Optional[Tensor]) -> Tuple[Tensor, Optional[Tensor]]
+    def forward(self, query: torch.Tensor, key: torch.Tensor, value: torch.Tensor,
+                key_padding_mask: Optional[torch.Tensor] = None,
+                need_weights: bool = True, attn_mask: Optional[torch.Tensor] = None) -> Tuple[torch.Tensor, Optional[torch.Tensor]]:
         r"""
     Args:
         query, key, value: map a query and a set of key-value pairs to an output.
