@@ -15,9 +15,6 @@ from transformers import AutoTokenizer, AutoProcessor
 from qwen_vl_utils import process_vision_info
 from tokenizer import SVGTokenizer
 
-with open('/PATH/TO/config.yaml', 'r') as f:
-    config = yaml.safe_load(f)
-
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 tokenizer = None
@@ -64,7 +61,8 @@ def load_models(weight_path):
         sketch_decoder = sketch_decoder.to(device).eval()
         
         # Initialize SVG tokenizer
-        svg_tokenizer = SVGTokenizer('/PATH/TO/config.yaml')
+        config_path = os.path.join(weight_path, "config.yaml")
+        svg_tokenizer = SVGTokenizer(config_path)
         print("Models loaded successfully!")
 
 def process_and_resize_image(image_input, target_size=(200, 200)):
@@ -139,9 +137,12 @@ def process_image_to_svg(image_path):
     
     return input_ids, attention_mask, pixel_values, image_grid_thw
 
-def generate_svg(input_ids, attention_mask, pixel_values=None, image_grid_thw=None, task_type="image-to-svg"):
+def generate_svg(input_ids, attention_mask, pixel_values=None, image_grid_thw=None, task_type="image-to-svg", weight_path=None):
     """Generate SVG"""
     try:
+        if not weight_path:
+            raise ValueError("weight_path must be provided to generate_svg")
+
         # Clean memory before generation
         gc.collect()
         torch.cuda.empty_cache() if torch.cuda.is_available() else None
@@ -173,6 +174,9 @@ def generate_svg(input_ids, attention_mask, pixel_values=None, image_grid_thw=No
             torch.cuda.synchronize()
 
         # Generate SVG
+        config_path = os.path.join(weight_path, "config.yaml")
+        with open(config_path, 'r') as f:
+            config = yaml.safe_load(f)
         model_config = config['model']
         max_length = model_config['max_length']
         output_ids = torch.ones(1, max_length+1).long().to(device) * model_config['eos_token_id']
@@ -229,7 +233,7 @@ def generate_svg(input_ids, attention_mask, pixel_values=None, image_grid_thw=No
         traceback.print_exc()
         return f"Error: {e}", None
 
-def process_image_folder(input_dir, output_dir):
+def process_image_folder(input_dir, output_dir, weight_path):
     """Process all images in a folder for image-to-svg task"""
     # Create output directory if it doesn't exist
     os.makedirs(output_dir, exist_ok=True)
@@ -259,7 +263,7 @@ def process_image_folder(input_dir, output_dir):
             
             # Generate SVG
             input_ids, attention_mask, pixel_values, image_grid_thw = process_image_to_svg(processed_image_path)
-            svg_code, png_image = generate_svg(input_ids, attention_mask, pixel_values, image_grid_thw, "image-to-svg")
+            svg_code, png_image = generate_svg(input_ids, attention_mask, pixel_values, image_grid_thw, "image-to-svg", weight_path)
             
             if svg_code and not svg_code.startswith("Error"):
                 # Save SVG file
@@ -280,7 +284,7 @@ def process_image_folder(input_dir, output_dir):
             print(f"Error processing {image_path}: {e}")
             continue
 
-def process_text_file(input_file, output_dir):
+def process_text_file(input_file, output_dir, weight_path):
     """Process text file for text-to-svg task"""
     # Create output directory if it doesn't exist
     os.makedirs(output_dir, exist_ok=True)
@@ -301,7 +305,7 @@ def process_text_file(input_file, output_dir):
         try:
             # Generate SVG
             input_ids, attention_mask, pixel_values, image_grid_thw = process_text_to_svg(text_description)
-            svg_code, png_image = generate_svg(input_ids, attention_mask, pixel_values, image_grid_thw, "text-to-svg")
+            svg_code, png_image = generate_svg(input_ids, attention_mask, pixel_values, image_grid_thw, "text-to-svg", weight_path)
             
             if svg_code and not svg_code.startswith("Error"):
                 # Create filename from text (sanitize for filesystem)
@@ -339,12 +343,12 @@ def main():
         if not os.path.isdir(args.input_dir):
             print(f"Error: {args.input_dir} is not a directory")
             return
-        process_image_folder(args.input_dir, args.output_dir)
+        process_image_folder(args.input_dir, args.output_dir, args.weight_path)
     else:  # text-to-svg
         if not os.path.isfile(args.input_dir):
             print(f"Error: {args.input_dir} is not a file")
             return
-        process_text_file(args.input_dir, args.output_dir)
+        process_text_file(args.input_dir, args.output_dir, args.weight_path)
     
     print("\nProcessing completed!")
 
