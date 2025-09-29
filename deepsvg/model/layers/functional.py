@@ -1,35 +1,37 @@
 from __future__ import division
 
 
+from typing import Optional, Tuple
+
 import torch
 import torch.nn.functional as F
 
 
-def multi_head_attention_forward(query,                           # type: Tensor
-                                 key,                             # type: Tensor
-                                 value,                           # type: Tensor
-                                 embed_dim_to_check,              # type: int
-                                 num_heads,                       # type: int
-                                 in_proj_weight,                  # type: Tensor
-                                 in_proj_bias,                    # type: Tensor
-                                 bias_k,                          # type: Optional[Tensor]
-                                 bias_v,                          # type: Optional[Tensor]
-                                 add_zero_attn,                   # type: bool
-                                 dropout_p,                       # type: float
-                                 out_proj_weight,                 # type: Tensor
-                                 out_proj_bias,                   # type: Tensor
-                                 training=True,                   # type: bool
-                                 key_padding_mask=None,           # type: Optional[Tensor]
-                                 need_weights=True,               # type: bool
-                                 attn_mask=None,                  # type: Optional[Tensor]
-                                 use_separate_proj_weight=False,  # type: bool
-                                 q_proj_weight=None,              # type: Optional[Tensor]
-                                 k_proj_weight=None,              # type: Optional[Tensor]
-                                 v_proj_weight=None,              # type: Optional[Tensor]
-                                 static_k=None,                   # type: Optional[Tensor]
-                                 static_v=None                    # type: Optional[Tensor]
-                                 ):
-    # type: (...) -> Tuple[Tensor, Optional[Tensor]]
+def multi_head_attention_forward(
+        query: torch.Tensor,
+        key: torch.Tensor,
+        value: torch.Tensor,
+        embed_dim_to_check: int,
+        num_heads: int,
+        in_proj_weight: torch.Tensor,
+        in_proj_bias: Optional[torch.Tensor],
+        bias_k: Optional[torch.Tensor],
+        bias_v: Optional[torch.Tensor],
+        add_zero_attn: bool,
+        dropout_p: float,
+        out_proj_weight: torch.Tensor,
+        out_proj_bias: Optional[torch.Tensor],
+        training: bool = True,
+        key_padding_mask: Optional[torch.Tensor] = None,
+        need_weights: bool = True,
+        attn_mask: Optional[torch.Tensor] = None,
+        use_separate_proj_weight: bool = False,
+        q_proj_weight: Optional[torch.Tensor] = None,
+        k_proj_weight: Optional[torch.Tensor] = None,
+        v_proj_weight: Optional[torch.Tensor] = None,
+        static_k: Optional[torch.Tensor] = None,
+        static_v: Optional[torch.Tensor] = None
+) -> Tuple[torch.Tensor, Optional[torch.Tensor]]:
     r"""
     Args:
         query, key, value: map a query and a set of key-value pairs to an output.
